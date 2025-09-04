@@ -58,3 +58,22 @@
         @apply bg-background text-foreground;
     }
 }
+
+/* Custom styles for profile popover */
+.profile-popover {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.35);
+}
+
+.profile-popover::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    width: 16px;
+    height: 16px;
+    background: hsl(222.2 84% 9%);
+    border-left: 1px solid hsl(217.2 32.6% 17.5%);
+    border-top: 1px solid hsl(217.2 32.6% 17.5%);
+    transform: rotate(45deg);
+    z-index: -1;
+}
