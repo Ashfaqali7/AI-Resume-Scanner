@@ -1,11 +1,13 @@
 "use client"
 
-import { signOut } from "next-auth/react"
+import { signOut, useSession } from "next-auth/react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { LogOut, User } from "lucide-react"
 
-export default function AuthHeader({ session }: { session: any }) {
+export default function AuthHeader() {
+  const { data: session } = useSession();
+
   return (
     <header className="bg-gray-900 border-b border-gray-800">
       <div className="container mx-auto px-4">

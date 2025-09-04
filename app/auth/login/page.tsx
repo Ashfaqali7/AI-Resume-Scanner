@@ -18,19 +18,19 @@ export default function LoginPage() {
         e.preventDefault()
         setLoading(true)
         setError("")
-        
+
         const result = await signIn("credentials", {
             email,
             password,
             redirect: false
         })
-        
+
         if (result?.error) {
             setError("Invalid email or password")
         } else {
             window.location.href = "/"
         }
-        
+
         setLoading(false)
     }
 
@@ -38,13 +38,13 @@ export default function LoginPage() {
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white">
             <div className="w-full max-w-md bg-gray-800/70 backdrop-blur-xl p-8 rounded-2xl space-y-6">
                 <h1 className="text-3xl font-bold text-center">Login</h1>
-                
+
                 {error && (
                     <div className="bg-red-500/20 border border-red-500 rounded-md p-3 text-sm">
                         {error}
                     </div>
                 )}
-                
+
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div className="space-y-2">
                         <Label htmlFor="email">Email</Label>
@@ -56,12 +56,12 @@ export default function LoginPage() {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
-                    
+
                     <div className="space-y-2">
                         <div className="flex justify-between items-center">
                             <Label htmlFor="password">Password</Label>
-                            <Link 
-                                href="/auth/forgot-password" 
+                            <Link
+                                href="/auth/forgot-password"
                                 className="text-sm text-blue-400 hover:underline"
                             >
                                 Forgot?
@@ -75,7 +75,7 @@ export default function LoginPage() {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    
+
                     <Button type="submit" className="w-full" disabled={loading}>
                         {loading ? <Loader2 className="animate-spin" /> : "Login"}
                     </Button>
@@ -99,19 +99,10 @@ export default function LoginPage() {
                     >
                         <Mail className="h-5 w-5" /> <span>Google</span>
                     </Button>
-                    
-                    <Button
-                        onClick={() => {
-                            // For demo purposes, we'll just show an alert
-                            alert("Google Drive login would be implemented here with proper Google Drive OAuth scopes")
-                            // In a real application, you would implement Google Drive OAuth with appropriate scopes
-                        }}
-                        className="w-full flex items-center space-x-2 bg-blue-500 hover:bg-blue-600"
-                    >
-                        <HardDrive className="h-5 w-5" /> <span>Google Drive</span>
-                    </Button>
+
+
                 </div>
-                
+
                 <div className="text-center text-sm">
                     Don't have an account?{" "}
                     <Link href="/auth/signup" className="text-blue-400 hover:underline">

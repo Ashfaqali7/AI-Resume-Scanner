@@ -33,7 +33,7 @@ export default function ProfilePage() {
         <div className="max-w-2xl mx-auto">
           <div className="bg-gray-800/70 backdrop-blur-xl rounded-2xl p-8">
             <h1 className="text-3xl font-bold mb-6">Profile</h1>
-            
+
             <div className="space-y-6">
               <div>
                 <h2 className="text-lg font-semibold mb-2">User Information</h2>
@@ -52,9 +52,9 @@ export default function ProfilePage() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="flex justify-end">
-                <Button 
+                <Button
                   onClick={() => signOut({ callbackUrl: "/auth/login" })}
                   className="flex items-center space-x-2 bg-red-500 hover:bg-red-600"
                 >
